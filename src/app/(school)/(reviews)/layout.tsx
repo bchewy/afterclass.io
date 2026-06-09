@@ -3,7 +3,6 @@ import { type ReactNode } from "react";
 import { CtaButton } from "@/common/components/cta-button";
 import { EditIcon, GithubIcon, PlusIcon } from "@/common/components/icons";
 import { env } from "@/env";
-import { BidWindowScheduleCard } from "@/modules/bidding/components/BidWindowScheduleCard";
 
 export default function ReviewLayout({
   header,
@@ -56,8 +55,25 @@ export default function ReviewLayout({
               data-test="cta-contribute-oss"
               data-umami-event="cta-btn-contribute-oss"
             />
-            <div className="overflow-hidden rounded-3xl border border-[#11130d]/15 bg-white/75 shadow-xl shadow-black/10">
-              <BidWindowScheduleCard />
+            <div className="w-full rounded-3xl border border-[#11130d]/15 bg-white/75 p-5 text-[#11130d] shadow-xl shadow-black/10">
+              <p className="font-mono text-xs tracking-[0.22em] uppercase opacity-60">
+                quick intel
+              </p>
+              <div className="mt-4 space-y-4">
+                {["Bid windows", "Review drops", "Course search"].map(
+                  (label, index) => (
+                    <div
+                      key={label}
+                      className="flex items-center justify-between border-t border-[#11130d]/10 pt-3"
+                    >
+                      <span className="font-semibold">{label}</span>
+                      <span className="font-mono text-xs tracking-[0.18em] uppercase opacity-60">
+                        live 0{index + 1}
+                      </span>
+                    </div>
+                  ),
+                )}
+              </div>
             </div>
           </aside>
         </div>
