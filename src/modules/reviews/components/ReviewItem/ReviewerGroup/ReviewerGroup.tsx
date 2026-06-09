@@ -11,7 +11,7 @@ export type ReviewerGroupProps = {
 
 export const ReviewerGroup = ({ review }: ReviewerGroupProps) => {
   return (
-    <div className="text-muted-foreground flex items-center justify-between gap-2 self-stretch">
+    <div className="text-muted-foreground flex items-center justify-between gap-2 self-stretch md:w-auto md:shrink-0">
       <Profile
         name={review.username}
         icon={

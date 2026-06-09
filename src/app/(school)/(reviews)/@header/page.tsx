@@ -46,8 +46,11 @@ export default async function HomeHeader() {
               <SparklesIcon className="size-3.5" />
               rebuilt as a signal wall
             </p>
-            <h1 className="font-[family-name:var(--font-poppins)] text-[clamp(3.5rem,13vw,10rem)] leading-[0.78] font-black tracking-[-0.1em] uppercase">
-              Pick classes like contraband.
+            <h1 className="font-[family-name:var(--font-poppins)] leading-[0.78] font-black tracking-[-0.07em] uppercase">
+              <span className="block text-[clamp(3rem,8vw,6.5rem)]">Pick</span>
+              <span className="block text-[clamp(3.35rem,10vw,9rem)]">
+                classes like contraband.
+              </span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-7 text-white/74 md:text-xl">
               Reviews, bid intel, and professor notes remixed into a loud campus
