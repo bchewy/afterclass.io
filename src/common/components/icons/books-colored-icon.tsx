@@ -1,12 +1,14 @@
 import { CustomIcon, type CustomIconProps } from "./custom-icon";
+import { cn } from "@/common/functions";
 
-export const BooksColoredIcon = (props: CustomIconProps) => {
+export const BooksColoredIcon = ({ className, ...props }: CustomIconProps) => {
   return (
     <CustomIcon
       width="20"
       height="20"
       viewBox="0 0 20 20"
       fill="none"
+      className={cn("grayscale", className)}
       {...props}
     >
       <path
