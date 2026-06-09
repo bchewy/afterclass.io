@@ -2,6 +2,8 @@ import { type PropsWithChildren } from "react";
 
 export default async function SchoolLayout({ children }: PropsWithChildren) {
   return (
-    <div className="mx-auto my-1 max-w-[954px] p-2 md:my-4">{children}</div>
+    <div className="mx-auto w-full max-w-[960px] px-3 py-4 md:px-6 md:py-8">
+      {children}
+    </div>
   );
 }

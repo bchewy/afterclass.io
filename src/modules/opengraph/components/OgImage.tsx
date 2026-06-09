@@ -15,7 +15,7 @@ export const OgImage = ({ children }: { children: ReactNode }) => (
       alignItems: "center",
       gap: "1rem",
       fontFamily: "Inter, sans-serif",
-      background: "#ECECEF",
+      background: "#FFFFFF",
     }}
   >
     {children}

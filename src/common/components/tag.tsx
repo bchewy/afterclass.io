@@ -5,7 +5,7 @@ import { X } from "lucide-react";
 import { cn } from "@/common/functions";
 
 const tagVariants = cva(
-  "inline-flex items-center select-none appearance-none rounded-md font-medium text-sm text-white transition-[background-color] data-[clickable=true]:cursor-pointer",
+  "inline-flex items-center select-none appearance-none rounded-sm text-sm font-medium transition-colors data-[clickable=true]:cursor-pointer",
   {
     compoundVariants: [
       // Default color
@@ -13,130 +13,133 @@ const tagVariants = cva(
         variant: "filled",
         color: "default",
         className:
-          "bg-foreground/90 dark:bg-foreground text-accent data-[clickable=true]:hover:bg-foreground/65",
+          "bg-foreground text-background data-[clickable=true]:hover:bg-foreground/75",
       },
       {
         variant: "outline",
         color: "default",
         className:
-          "text-foreground border-foreground border data-[clickable=true]:hover:bg-muted-foreground/10",
+          "border border-foreground text-foreground data-[clickable=true]:hover:bg-accent",
       },
       {
         variant: "soft",
         color: "default",
         className:
-          "text-foreground dark:bg-accent/35 bg-accent data-[clickable=true]:hover:bg-foreground/15 dark:data-[clickable=true]:hover:bg-accent/65",
+          "bg-accent text-foreground data-[clickable=true]:hover:bg-foreground/15 dark:data-[clickable=true]:hover:bg-accent/65",
       },
       // Primary color
       {
         variant: "filled",
         color: "primary",
-        className: "bg-primary data-[clickable=true]:hover:bg-primary/80",
+        className:
+          "bg-foreground text-background data-[clickable=true]:hover:bg-foreground/75",
       },
       {
         variant: "outline",
         color: "primary",
         className:
-          "text-primary border-primary border data-[clickable=true]:hover:bg-primary/5",
+          "border border-foreground text-foreground data-[clickable=true]:hover:bg-accent",
       },
       {
         variant: "soft",
         color: "primary",
         className:
-          "text-primary bg-primary/15 data-[clickable=true]:hover:bg-primary/35",
+          "bg-accent text-foreground data-[clickable=true]:hover:bg-muted",
       },
       // Secondary color
       {
         variant: "filled",
         color: "secondary",
-        className: "bg-secondary data-[clickable=true]:hover:bg-secondary/80",
+        className:
+          "bg-foreground text-background data-[clickable=true]:hover:bg-foreground/75",
       },
       {
         variant: "outline",
         color: "secondary",
         className:
-          "text-secondary border-secondary border data-[clickable=true]:hover:bg-secondary/5",
+          "border border-foreground text-foreground data-[clickable=true]:hover:bg-accent",
       },
       {
         variant: "soft",
         color: "secondary",
         className:
-          "text-secondary bg-secondary/15 data-[clickable=true]:hover:bg-secondary/35",
+          "bg-accent text-foreground data-[clickable=true]:hover:bg-muted",
       },
       // Info color
       {
         variant: "filled",
         color: "info",
-        className: "text-white bg-info data-[clickable=true]:hover:bg-info/90",
+        className:
+          "bg-foreground text-background data-[clickable=true]:hover:bg-foreground/75",
       },
       {
         variant: "outline",
         color: "info",
         className:
-          "text-info border-info border data-[clickable=true]:hover:bg-info/5",
+          "border border-foreground text-foreground data-[clickable=true]:hover:bg-accent",
       },
       {
         variant: "soft",
         color: "info",
         className:
-          "text-info bg-info/15 data-[clickable=true]:hover:bg-info/35",
+          "bg-accent text-foreground data-[clickable=true]:hover:bg-muted",
       },
       // Success color
       {
         variant: "filled",
         color: "success",
         className:
-          "text-white bg-success data-[clickable=true]:hover:bg-success/90",
+          "bg-foreground text-background data-[clickable=true]:hover:bg-foreground/75",
       },
       {
         variant: "outline",
         color: "success",
         className:
-          "text-success border-success border data-[clickable=true]:hover:bg-success/5",
+          "border border-foreground text-foreground data-[clickable=true]:hover:bg-accent",
       },
       {
         variant: "soft",
         color: "success",
         className:
-          "text-success bg-success/15 data-[clickable=true]:hover:bg-success/35",
+          "bg-accent text-foreground data-[clickable=true]:hover:bg-muted",
       },
       // Warning color
       {
         variant: "filled",
         color: "warning",
         className:
-          "text-white bg-warning data-[clickable=true]:hover:bg-warning/90",
+          "bg-foreground text-background data-[clickable=true]:hover:bg-foreground/75",
       },
       {
         variant: "outline",
         color: "warning",
         className:
-          "text-warning border-warning border data-[clickable=true]:hover:bg-warning/5",
+          "border border-foreground text-foreground data-[clickable=true]:hover:bg-accent",
       },
       {
         variant: "soft",
         color: "warning",
         className:
-          "text-warning bg-warning/15 data-[clickable=true]:hover:bg-warning/35",
+          "bg-accent text-foreground data-[clickable=true]:hover:bg-muted",
       },
       // Error color
       {
         variant: "filled",
         color: "error",
         className:
-          "text-white bg-error data-[clickable=true]:hover:bg-error/90",
+          "bg-foreground text-background data-[clickable=true]:hover:bg-foreground/75",
       },
       {
         variant: "outline",
         color: "error",
         className:
-          "text-error border-error border data-[clickable=true]:hover:bg-error/5",
+          "border border-foreground text-foreground data-[clickable=true]:hover:bg-accent",
       },
       {
         variant: "soft",
         color: "error",
         className:
-          "text-error bg-error/15 data-[clickable=true]:hover:bg-error/35",
+          "bg-accent text-foreground data-[clickable=true]:hover:bg-muted",
       },
     ],
     variants: {
@@ -182,15 +185,16 @@ const deletableVariants = cva(
         default:
           "data-[variant=filled]:bg-accent/80 data-[variant=filled]:hover:bg-accent data-[variant=filled]:text-foreground bg-foreground/65 hover:bg-foreground",
         primary:
-          "data-[variant=filled]:text-primary bg-primary/65 hover:bg-primary",
+          "data-[variant=filled]:text-foreground bg-foreground/65 hover:bg-foreground",
         secondary:
-          "data-[variant=filled]:text-secondary bg-secondary/65 hover:bg-secondary",
-        info: "data-[variant=filled]:text-info bg-info/65 hover:bg-info",
+          "data-[variant=filled]:text-foreground bg-foreground/65 hover:bg-foreground",
+        info: "data-[variant=filled]:text-foreground bg-foreground/65 hover:bg-foreground",
         success:
-          "data-[variant=filled]:text-success bg-success/65 hover:bg-success",
+          "data-[variant=filled]:text-foreground bg-foreground/65 hover:bg-foreground",
         warning:
-          "data-[variant=filled]:text-warning bg-warning/65 hover:bg-warning",
-        error: "data-[variant=filled]:text-error bg-error/65 hover:bg-error",
+          "data-[variant=filled]:text-foreground bg-foreground/65 hover:bg-foreground",
+        error:
+          "data-[variant=filled]:text-foreground bg-foreground/65 hover:bg-foreground",
       },
     },
     defaultVariants: {

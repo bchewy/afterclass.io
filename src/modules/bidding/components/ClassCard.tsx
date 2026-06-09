@@ -42,7 +42,7 @@ export const ClassCard = ({
   return (
     <ProgressLink
       variant="outline"
-      className="hover:bg-secondary focus-ring bg-card flex h-fit w-64 cursor-pointer flex-col items-start gap-2 rounded-md border p-4 text-left font-normal md:gap-4"
+      className="focus-ring bg-background hover:bg-accent flex h-fit w-64 cursor-pointer flex-col items-start gap-2 rounded-sm border p-4 text-left font-normal md:gap-4"
       href={`/bidding/analytics?course=${course.code}&section=${section}&classId=${classId}`}
       data-umami-event="boss-bid-class-select"
       data-umami-event-class-id={classId}
@@ -50,9 +50,7 @@ export const ClassCard = ({
     >
       <div className="flex w-full flex-col items-start gap-1">
         <div className="flex items-center gap-2">
-          <Heading className="text-primary text-xl tracking-tight">
-            {course.code}
-          </Heading>
+          <Heading className="text-xl tracking-tight">{course.code}</Heading>
           <Tag variant="soft" color="primary" size="sm" deletable={false}>
             {section}
           </Tag>

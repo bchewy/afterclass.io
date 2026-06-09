@@ -15,7 +15,7 @@ export const RatingSection = ({
 }: RatingSectionProps) => {
   return (
     <div
-      className="bg-card relative flex w-full flex-col items-start gap-5 rounded-2xl p-6"
+      className="relative flex w-full flex-col items-start gap-5 border p-5"
       data-test="rating-section"
     >
       {isLocked && <LockedOverlay />}
@@ -44,7 +44,7 @@ export const RatingSection = ({
 
 const RatingSectionSkeleton = () => {
   return (
-    <div className="bg-card relative flex w-full flex-col items-start gap-5 rounded-2xl p-6">
+    <div className="relative flex w-full flex-col items-start gap-5 border p-5">
       <div className="flex w-full items-center gap-10 rounded-none">
         <div className="flex items-center gap-3 rounded-none">
           <HeartIcon className="size-6" />

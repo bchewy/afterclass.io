@@ -41,11 +41,11 @@ export const ReviewItem = ({
 
   return !(session.status === "authenticated") || isLocked ? (
     <div
-      className="focus-ring flex h-fit max-w-prose cursor-pointer flex-col items-start gap-2 rounded-md p-4 text-left md:gap-4"
+      className="focus-ring flex h-fit max-w-prose cursor-pointer flex-col items-start gap-2 border-b px-1 py-5 text-left md:gap-4"
       data-test="review"
     >
       <ReviewHeader />
-      <div className="text-muted-foreground relative line-clamp-5 flex h-16 w-full self-stretch overflow-hidden rounded-sm border wrap-anywhere md:line-clamp-3 md:text-sm">
+      <div className="text-muted-foreground relative line-clamp-5 flex h-16 w-full self-stretch overflow-hidden border wrap-anywhere md:line-clamp-3 md:text-sm">
         <LockedOverlay ctaType="review" />
         <FullWidthEnforcer />
       </div>
@@ -53,7 +53,7 @@ export const ReviewItem = ({
   ) : (
     <ReviewModal review={review} variant={variant} seeMore={seeMore}>
       <div
-        className="focus-ring hover:bg-accent flex h-fit max-w-prose cursor-pointer flex-col items-start gap-2 rounded-md p-4 text-left md:gap-4"
+        className="focus-ring hover:bg-accent flex h-fit max-w-prose cursor-pointer flex-col items-start gap-2 border-b px-1 py-5 text-left transition-colors md:gap-4"
         data-test="review"
       >
         <ReviewHeader />

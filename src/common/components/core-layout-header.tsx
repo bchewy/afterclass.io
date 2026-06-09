@@ -16,11 +16,11 @@ import { UserProfile } from "@/common/components/user-profile";
 export const CoreLayoutHeader = async () => {
   const session = await auth();
   return (
-    <header className="border-border-default bg-background sticky top-0 z-20 flex h-16 shrink-0 items-center gap-2 border-b px-4">
+    <header className="bg-background/95 sticky top-0 z-20 flex h-14 shrink-0 items-center gap-2 border-b px-3 backdrop-blur md:px-5">
       <SidebarTrigger className="-ml-1" />
       <Separator
         orientation="vertical"
-        className="bg-border-elevated mr-2 hidden h-4 md:block"
+        className="bg-border mr-2 hidden h-4 md:block"
       />
       <div className="flex w-full items-center justify-between">
         <HomeBreadcrumb className="hidden md:block" />
@@ -31,7 +31,7 @@ export const CoreLayoutHeader = async () => {
           variant="ghost"
           size="icon"
         >
-          <AfterclassIcon className="text-primary size-6" />
+          <AfterclassIcon className="text-foreground size-6" />
         </ProgressLink>
         <div className="flex items-center gap-4 md:mr-4">
           {session ? (

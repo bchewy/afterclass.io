@@ -1,15 +1,7 @@
-import { AfterclassIcon, CustomIcon } from "@/common/components/icons";
-import { NTUIcon, NUSIcon, SMUIcon } from "@/common/components/icons";
+import { AfterclassIcon } from "@/common/components/icons";
 import { type UniversityAbbreviation } from "@prisma/client";
 
-const svgs = {
-  SMU: SMUIcon,
-  NUS: NUSIcon,
-  NTU: NTUIcon,
-} satisfies Record<UniversityAbbreviation, React.ReactNode>;
-
 const SchoolIcon = ({ school }: { school: UniversityAbbreviation }) => {
-  const schoolSVG = svgs[school] || SMUIcon;
   return (
     <div
       style={{
@@ -25,9 +17,23 @@ const SchoolIcon = ({ school }: { school: UniversityAbbreviation }) => {
         border: "1px solid rgba(15, 15, 15, 0.15)",
       }}
     >
-      <CustomIcon viewBox="0 0 63 63" fill="none" width="3rem" height="3rem">
-        {schoolSVG}
-      </CustomIcon>
+      <div
+        style={{
+          alignItems: "center",
+          border: "1px solid #000000",
+          borderRadius: "9999px",
+          color: "#000000",
+          display: "flex",
+          fontSize: "0.875rem",
+          fontWeight: "700",
+          height: "3rem",
+          justifyContent: "center",
+          letterSpacing: "-0.02em",
+          width: "3rem",
+        }}
+      >
+        {school}
+      </div>
       <div
         style={{
           fontFamily: "Inter, sans-serif",
@@ -36,7 +42,7 @@ const SchoolIcon = ({ school }: { school: UniversityAbbreviation }) => {
           fontWeight: "600",
           lineHeight: "1.53125rem",
           letterSpacing: "-0.02125rem",
-          color: "#070708",
+          color: "#000000",
         }}
       >
         {school}
@@ -73,7 +79,7 @@ export const OgImageHeader = ({
           style={{
             display: "flex",
             fontSize: "24px",
-            color: "#7A7A85",
+            color: "#525252",
             fontWeight: "800",
           }}
         >
@@ -81,6 +87,6 @@ export const OgImageHeader = ({
         </div>
       )}
     </div>
-    <AfterclassIcon height="51.75" width="50" style={{ color: "#5039D4" }} />
+    <AfterclassIcon height="51.75" width="50" style={{ color: "#000000" }} />
   </div>
 );

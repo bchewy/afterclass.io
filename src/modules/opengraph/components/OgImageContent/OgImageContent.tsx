@@ -28,7 +28,7 @@ const StatItemHorizontal = ({
         fontWeight: "600",
         lineHeight: "2.71875rem",
         letterSpacing: "-0.0495rem",
-        color: "#070708",
+        color: "#000000",
       }}
     >
       {value}
@@ -40,7 +40,7 @@ const StatItemHorizontal = ({
         fontWeight: "500",
         lineHeight: "1.53125rem",
         letterSpacing: "-0.02125rem",
-        color: "#56565D",
+        color: "#525252",
       }}
     >
       {label}
@@ -61,7 +61,7 @@ const FilterItemStats = ({
       alignItems: "center",
       gap: "0.25rem",
       fontFamily: "Inter, sans-serif",
-      color: "#7A7A85",
+      color: "#737373",
     }}
   >
     {icon}
@@ -103,7 +103,7 @@ const StatItem = ({
         fontWeight: "500",
         lineHeight: "1.375rem",
         letterSpacing: "-0.01575rem",
-        color: "#7A7A85",
+        color: "#737373",
       }}
     >
       {label}
@@ -115,7 +115,7 @@ const StatItem = ({
         fontWeight: "600",
         lineHeight: "2.25rem",
         letterSpacing: "-0.03938rem",
-        color: "#070708",
+        color: "#000000",
       }}
     >
       {value}
@@ -149,8 +149,9 @@ export const OgImageContent = ({
       justifyContent: "center",
       alignItems: "flex-start",
       alignSelf: "stretch",
-      borderRadius: "1.25rem",
-      background: "#F7F7F8",
+      border: "1px solid #D4D4D4",
+      borderRadius: "0.25rem",
+      background: "#FFFFFF",
     }}
   >
     <div

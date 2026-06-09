@@ -35,14 +35,14 @@ export const CtaButton = ({
   return (
     <ProgressLink
       className={cn(
-        "h-fit w-full items-center justify-between self-stretch border p-6 has-[>svg]:px-6",
+        "h-fit w-full items-center justify-between self-stretch rounded-sm border p-5 has-[>svg]:px-5 hover:bg-foreground hover:text-background",
         className,
       )}
       {...props}
     >
       <div className="flex items-center gap-3">
         {renderIcon(iconLeft)}
-        <span className="text-lg font-semibold">{ctaText}</span>
+        <span className="text-base font-semibold">{ctaText}</span>
       </div>
       {renderIcon(iconRight)}
     </ProgressLink>

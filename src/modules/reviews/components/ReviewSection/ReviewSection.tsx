@@ -11,10 +11,7 @@ export type ReviewSectionProps = ComponentPropsWithoutRef<"div">;
 export const ReviewSection = ({ className, ...props }: ReviewSectionProps) => {
   return (
     <div
-      className={cn(
-        "bg-card grid gap-4 rounded-3xl pt-6 md:gap-9 md:p-6 md:pt-12",
-        className,
-      )}
+      className={cn("grid gap-4 border-y py-5 md:gap-8 md:py-8", className)}
       {...props}
     />
   );

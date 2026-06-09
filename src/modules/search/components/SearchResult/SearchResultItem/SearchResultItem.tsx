@@ -29,7 +29,7 @@ export const SearchResultItem = ({
     <ProgressLink
       href={href}
       variant="outline"
-      className="bg-card flex h-fit w-full items-center justify-between gap-2 rounded-lg border p-3 whitespace-normal has-[>svg]:px-5 md:gap-4 md:p-4"
+      className="hover:bg-accent flex h-fit w-full items-center justify-between gap-2 rounded-none border-x-0 border-t-0 border-b bg-transparent px-1 py-5 whitespace-normal has-[>svg]:px-1 md:gap-4 md:py-6"
       data-test="search-result"
     >
       <div className="flex flex-[1_0_0%] flex-col items-start justify-center space-y-2 md:space-y-4">
@@ -39,10 +39,7 @@ export const SearchResultItem = ({
             className="mt-[2px] size-4 flex-none md:size-6"
             school={school}
           />
-          <Heading
-            as="h1"
-            className="text-accent-foreground text-left tracking-tight md:text-lg"
-          >
+          <Heading as="h1" className="text-left tracking-tight md:text-lg">
             {title}
           </Heading>
           {subtitle && (

@@ -121,7 +121,7 @@ export const AppSidebar = () => {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" className="pt-2" asChild>
-              <Link href="/" className="text-primary flex items-center px-3">
+              <Link href="/" className="text-foreground flex items-center px-3">
                 <Logo />
               </Link>
             </SidebarMenuButton>
@@ -152,7 +152,7 @@ export const AppSidebar = () => {
                     <ProgressLink
                       variant="ghost"
                       href={item.href}
-                      className="text-muted-foreground hover:bg-border-elevated hover:text-accent-foreground flex items-center justify-start gap-x-3 border border-transparent px-3 py-2 text-sm font-semibold after:!content-none"
+                      className="text-muted-foreground hover:bg-accent hover:text-foreground data-[active=true]:bg-foreground data-[active=true]:text-background flex items-center justify-start gap-x-3 border border-transparent px-3 py-2 text-sm font-medium after:!content-none"
                       data-test={`sidebar-${sidebarItemName(item.label)}`}
                     >
                       {item.icon}
@@ -197,7 +197,7 @@ export const AppSidebar = () => {
                                 ? (item.target ?? "_blank")
                                 : undefined
                             }
-                            className="text-muted-foreground hover:bg-border-elevated hover:text-accent-foreground flex items-center justify-start gap-x-3 border border-transparent px-3 py-2 text-sm font-semibold after:!content-none"
+                            className="text-muted-foreground hover:bg-accent hover:text-foreground data-[active=true]:bg-foreground data-[active=true]:text-background flex items-center justify-start gap-x-3 border border-transparent px-3 py-2 text-sm font-medium after:!content-none"
                             data-umami-event={`sidebar-${sidebarItemName(item.label)}`}
                             data-test={`sidebar-${sidebarItemName(item.label)}`}
                           >

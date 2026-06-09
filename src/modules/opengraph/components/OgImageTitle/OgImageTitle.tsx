@@ -26,7 +26,7 @@ export const OgImageTitle = ({
         fontStyle: "normal",
         lineHeight: "2.25rem",
         flex: "1 0 0",
-        color: "#070708",
+        color: "#000000",
         // line-clamp-2
         overflow: "hidden",
         display: "-webkit-box",

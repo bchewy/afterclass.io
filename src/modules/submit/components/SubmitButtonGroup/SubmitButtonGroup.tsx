@@ -33,10 +33,10 @@ export const SubmitButtonGroup = ({ isLoading }: { isLoading: boolean }) => {
       : `as ${session?.user.email}`;
 
   return (
-    <div className="border-primary/80 bg-primary inline-flex h-10 shrink-0 items-center justify-center rounded-3xl border">
+    <div className="bg-primary inline-flex h-10 shrink-0 items-center justify-center rounded-sm border">
       <Button
         type="submit"
-        className="border-primary/80 flex h-full content-center items-center gap-2 self-stretch rounded-none rounded-l-3xl border pr-3 pl-4"
+        className="flex h-full content-center items-center gap-2 self-stretch rounded-none border-r pr-3 pl-4"
         disabled={isLoading}
         data-test="review-submit-button"
       >
@@ -57,7 +57,7 @@ export const SubmitButtonGroup = ({ isLoading }: { isLoading: boolean }) => {
         <SelectTrigger
           asChild
           data-size="icon"
-          className="border-primary/80 flex h-full w-auto content-center items-center gap-4 self-stretch rounded-none rounded-r-3xl border py-3"
+          className="flex h-full w-auto content-center items-center gap-4 self-stretch rounded-none py-3"
         >
           <Button
             data-test="review-submit-select-trigger"

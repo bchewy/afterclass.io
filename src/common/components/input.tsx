@@ -58,7 +58,7 @@ const InputRoot = React.forwardRef<
           }
         })}
         className={cn(
-          "border-input flex min-h-9 cursor-text items-center gap-2 rounded-md border bg-transparent px-3 py-1 text-sm shadow-sm transition-colors",
+          "border-input flex min-h-9 cursor-text items-center gap-2 rounded-sm border bg-transparent px-3 py-1 text-sm shadow-none transition-colors",
           disabled && "cursor-not-allowed opacity-50",
           focused && "ring-ring ring-1",
           className,

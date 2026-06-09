@@ -23,9 +23,9 @@ export const AuthCard = <T extends React.ElementType = typeof defaultElement>({
 }: TitleProps<T>) => {
   const Title = as ?? defaultElement;
   return (
-    <div className="bg-card flex max-w-screen-sm flex-[1_0_0] flex-col items-start gap-6 rounded-2xl p-5 md:p-12">
+    <div className="flex max-w-screen-sm flex-[1_0_0] flex-col items-start gap-6 border p-5 md:p-10">
       <Title
-        className="text-accent-foreground text-xl font-semibold md:text-3xl"
+        className="text-xl font-semibold tracking-tight md:text-3xl"
         {...rest}
       >
         {title}
@@ -45,7 +45,7 @@ export const AuthCard = <T extends React.ElementType = typeof defaultElement>({
           )}
         >
           <span>Contact us on Telegram</span>
-          <span className="text-primary">@afterclass</span>
+          <span className="text-foreground">@afterclass</span>
         </Link>
       </div>
     </div>

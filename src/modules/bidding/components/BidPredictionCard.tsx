@@ -65,7 +65,7 @@ export const BidPredictionCard = ({
                 <span className="text-muted-foreground text-xl font-normal">
                   e$
                 </span>
-                <span className="text-primary font-mono text-3xl tabular-nums">
+                <span className="font-mono text-3xl tabular-nums">
                   {formatNumberShortScale(recommendedMin, {
                     minimumFractionDigits: 2,
                     decimals: 2,
@@ -75,7 +75,7 @@ export const BidPredictionCard = ({
               <span className="text-muted-foreground text-xl font-normal">
                 -
               </span>
-              <span className="text-primary font-mono text-3xl font-bold tracking-tighter tabular-nums">
+              <span className="font-mono text-3xl font-bold tracking-tighter tabular-nums">
                 {formatNumberShortScale(recommendedMedian, {
                   minimumFractionDigits: 2,
                   decimals: 2,

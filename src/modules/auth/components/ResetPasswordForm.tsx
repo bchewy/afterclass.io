@@ -99,7 +99,7 @@ export const ResetPasswordForm = () => {
           {form.formState.isSubmitting ? "Signing in..." : "Reset Password"}
         </Button>
         {isSubmitSuccessful && (
-          <div className="text-green-500">
+          <div className="text-foreground">
             Your password has been updated successfully.
           </div>
         )}
