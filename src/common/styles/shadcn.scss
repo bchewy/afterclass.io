@@ -1,10 +1,15 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  /* Fonts — Inter for body, Poppins as the heavy display face */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-poppins), var(--font-inter), sans-serif;
+
+  /* Brutalism = no soft corners */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -47,91 +52,129 @@
   --color-error-foreground: var(--error-foreground);
 }
 
+/* =====================================================================
+   AfterClass // BRUTAL — a neo-brutalist variant
+   Cream paper, ink-black hard borders, hard offset shadows, electric
+   violet + acid-lime accents, heavy display type. No soft edges.
+   ===================================================================== */
 :root {
-  --radius: 0.75rem;
-  --background: oklch(0.958 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
-  --card: oklch(0.99 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.48 0.2229 280.55);
-  --primary-foreground: oklch(0.969 0.016 293.756);
-  --secondary: oklch(0.91 0.0368 292.45);
-  --secondary-foreground: oklch(0.48 0.2229 280.55);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.21 0.006 285.885);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.48 0.2229 280.55);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.48 0.2229 280.55);
-  --sidebar-primary-foreground: oklch(0.969 0.016 293.756);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.48 0.2229 280.55);
+  --radius: 0rem;
 
-  --info: oklch(0.6637 0.2266 259.26);
-  --info-foreground: oklch(0.9148 0.0909 226.9);
-  --success: oklch(0.7023 0.1879 162.94);
-  --success-foreground: oklch(0.9376 0.0797 143.26);
-  --warning: oklch(0.8162 0.2162 103.7);
-  --warning-foreground: oklch(0.9527 0.1203 123.86);
-  --error: oklch(0.6126 0.2559 28.9);
-  --error-foreground: oklch(0.9602 0.1324 66.23);
+  /* warm cream "paper" canvas */
+  --background: oklch(0.962 0.027 96);
+  --foreground: oklch(0.185 0.02 277);
+  --card: oklch(0.995 0.008 96);
+  --card-foreground: oklch(0.185 0.02 277);
+  --popover: oklch(0.995 0.008 96);
+  --popover-foreground: oklch(0.185 0.02 277);
+
+  /* electric violet brand */
+  --primary: oklch(0.52 0.247 280);
+  --primary-foreground: oklch(0.985 0.014 96);
+
+  /* acid lime "pop" */
+  --secondary: oklch(0.885 0.196 116);
+  --secondary-foreground: oklch(0.185 0.02 277);
+  --accent: oklch(0.895 0.2 118);
+  --accent-foreground: oklch(0.185 0.02 277);
+
+  --muted: oklch(0.93 0.022 96);
+  --muted-foreground: oklch(0.41 0.024 277);
+
+  --destructive: oklch(0.585 0.248 27.5);
+
+  /* ink-black hard borders */
+  --border: oklch(0.185 0.02 277);
+  --input: oklch(0.185 0.02 277);
+  --ring: oklch(0.52 0.247 280);
+
+  --chart-1: oklch(0.52 0.247 280);
+  --chart-2: oklch(0.78 0.2 118);
+  --chart-3: oklch(0.7 0.2 35);
+  --chart-4: oklch(0.6 0.22 200);
+  --chart-5: oklch(0.62 0.25 350);
+
+  --sidebar: oklch(0.985 0.012 96);
+  --sidebar-foreground: oklch(0.185 0.02 277);
+  --sidebar-primary: oklch(0.52 0.247 280);
+  --sidebar-primary-foreground: oklch(0.985 0.014 96);
+  --sidebar-accent: oklch(0.895 0.2 118);
+  --sidebar-accent-foreground: oklch(0.185 0.02 277);
+  --sidebar-border: oklch(0.185 0.02 277);
+  --sidebar-ring: oklch(0.52 0.247 280);
+
+  --info: oklch(0.6 0.22 255);
+  --info-foreground: oklch(0.185 0.02 277);
+  --success: oklch(0.68 0.2 150);
+  --success-foreground: oklch(0.185 0.02 277);
+  --warning: oklch(0.82 0.216 96);
+  --warning-foreground: oklch(0.185 0.02 277);
+  --error: oklch(0.6 0.256 28);
+  --error-foreground: oklch(0.985 0.014 96);
+
+  /* hard offset shadows — no blur, full ink */
+  --brutal-xs: 2px 2px 0 0 var(--foreground);
+  --brutal-sm: 3px 3px 0 0 var(--foreground);
+  --brutal: 5px 5px 0 0 var(--foreground);
+  --brutal-lg: 8px 8px 0 0 var(--foreground);
 }
 
 .dark {
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.65 0.1718 272.63);
-  --primary-foreground: oklch(0.969 0.016 293.756);
-  --secondary: oklch(0.23 0.0881 283.57);
-  --secondary-foreground: oklch(0.67 0.1395 289.25);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.65 0.1718 272.63);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.65 0.1718 272.63);
-  --sidebar-primary-foreground: oklch(0.969 0.016 293.756);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.65 0.1718 272.63);
+  /* near-black canvas, cream ink + borders */
+  --background: oklch(0.165 0.018 277);
+  --foreground: oklch(0.955 0.022 96);
+  --card: oklch(0.225 0.022 277);
+  --card-foreground: oklch(0.955 0.022 96);
+  --popover: oklch(0.225 0.022 277);
+  --popover-foreground: oklch(0.955 0.022 96);
 
-  --info: oklch(0.6637 0.2266 259.26);
-  --info-foreground: oklch(0.9148 0.0909 226.9);
-  --success: oklch(0.7023 0.1879 162.94);
-  --success-foreground: oklch(0.9376 0.0797 143.26);
-  --warning: oklch(0.8162 0.2162 103.7);
-  --warning-foreground: oklch(0.9527 0.1203 123.86);
-  --error: oklch(0.6126 0.2559 28.9);
-  --error-foreground: oklch(0.9602 0.1324 66.23);
+  --primary: oklch(0.72 0.19 288);
+  --primary-foreground: oklch(0.165 0.018 277);
+
+  --secondary: oklch(0.86 0.2 116);
+  --secondary-foreground: oklch(0.165 0.018 277);
+  --accent: oklch(0.86 0.2 116);
+  --accent-foreground: oklch(0.165 0.018 277);
+
+  --muted: oklch(0.28 0.02 277);
+  --muted-foreground: oklch(0.74 0.022 96);
+
+  --destructive: oklch(0.7 0.2 25);
+
+  /* cream hard borders pop against the dark */
+  --border: oklch(0.93 0.03 96);
+  --input: oklch(0.93 0.03 96);
+  --ring: oklch(0.72 0.19 288);
+
+  --chart-1: oklch(0.72 0.19 288);
+  --chart-2: oklch(0.86 0.2 116);
+  --chart-3: oklch(0.74 0.2 40);
+  --chart-4: oklch(0.7 0.2 200);
+  --chart-5: oklch(0.7 0.24 350);
+
+  --sidebar: oklch(0.225 0.022 277);
+  --sidebar-foreground: oklch(0.955 0.022 96);
+  --sidebar-primary: oklch(0.72 0.19 288);
+  --sidebar-primary-foreground: oklch(0.165 0.018 277);
+  --sidebar-accent: oklch(0.86 0.2 116);
+  --sidebar-accent-foreground: oklch(0.165 0.018 277);
+  --sidebar-border: oklch(0.93 0.03 96);
+  --sidebar-ring: oklch(0.72 0.19 288);
+
+  --info: oklch(0.68 0.2 255);
+  --info-foreground: oklch(0.165 0.018 277);
+  --success: oklch(0.74 0.2 150);
+  --success-foreground: oklch(0.165 0.018 277);
+  --warning: oklch(0.84 0.216 96);
+  --warning-foreground: oklch(0.165 0.018 277);
+  --error: oklch(0.66 0.25 28);
+  --error-foreground: oklch(0.965 0.02 96);
+
+  /* in the dark, the offset shadow is cream so it stays visible */
+  --brutal-xs: 2px 2px 0 0 var(--border);
+  --brutal-sm: 3px 3px 0 0 var(--border);
+  --brutal: 5px 5px 0 0 var(--border);
+  --brutal-lg: 8px 8px 0 0 var(--border);
 }
 
 @layer base {
@@ -141,4 +184,141 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* ---------------------------------------------------------------------
+   Brutalist treatment. These selectors are intentionally UNLAYERED so
+   they win over Tailwind's `rounded-*` / `shadow-*` utilities and apply
+   cohesively across every shadcn primitive via its `data-slot`.
+   --------------------------------------------------------------------- */
+
+/* Heavy display type for headings & key labels */
+h1,
+h2,
+h3,
+[data-slot="card-title"],
+[data-slot="dialog-title"],
+[data-slot="alert-dialog-title"],
+[data-slot="sheet-title"] {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+[data-slot="sidebar-group-label"] {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Surfaces: thick ink borders + hard offset shadows, zero radius */
+[data-slot="card"],
+[data-slot="popover-content"],
+[data-slot="dropdown-menu-content"],
+[data-slot="dropdown-menu-sub-content"],
+[data-slot="select-content"],
+[data-slot="dialog-content"],
+[data-slot="alert-dialog-content"],
+[data-slot="hover-card-content"],
+[data-slot="sheet-content"],
+[data-slot="command"],
+[data-slot="tooltip-content"] {
+  border: 2px solid var(--border);
+  border-radius: 0;
+  box-shadow: var(--brutal);
+}
+
+[data-slot="tooltip-content"] {
+  box-shadow: var(--brutal-sm);
+  color: var(--popover-foreground);
+  background: var(--popover);
+}
+/* keep the tooltip arrow consistent with the solid surface */
+[data-slot="tooltip-content"] .bg-primary {
+  background: var(--popover);
+}
+
+/* Inputs / triggers — boxed and sharp, accent ring on focus */
+[data-slot="input"],
+[data-slot="textarea"],
+[data-slot="select-trigger"],
+[data-slot="sidebar-input"],
+[data-slot="command-input"] {
+  border: 2px solid var(--border) !important;
+  border-radius: 0 !important;
+  box-shadow: none;
+}
+[data-slot="input"]:focus-visible,
+[data-slot="textarea"]:focus-visible,
+[data-slot="select-trigger"]:focus-visible {
+  box-shadow: var(--brutal-xs);
+  outline: none;
+}
+
+/* The whole app frame gets hard divider lines */
+[data-slot="sidebar-container"] [data-slot="sidebar-inner"],
+[data-slot="sidebar"] > [data-slot="sidebar-inner"] {
+  border-right: 2px solid var(--sidebar-border);
+}
+header[class*="sticky"] {
+  border-bottom-width: 2px !important;
+  border-bottom-color: var(--border) !important;
+}
+
+/* Active sidebar item reads like a stamped block */
+[data-slot="sidebar-menu-button"][data-active="true"] {
+  border: 2px solid var(--border);
+  box-shadow: var(--brutal-xs);
+  font-weight: 700;
+}
+
+/* Buttons — solid variants become pressable brutalist blocks.
+   Ghost/link variants stay clean (used by nav links). */
+[data-slot="button"][data-variant="default"],
+[data-slot="button"][data-variant="destructive"],
+[data-slot="button"][data-variant="secondary"],
+[data-slot="button"][data-variant="outline"] {
+  border: 2px solid var(--border);
+  border-radius: 0;
+  box-shadow: var(--brutal-sm);
+  transition:
+    transform 0.08s ease,
+    box-shadow 0.08s ease;
+}
+[data-slot="button"][data-variant="default"]:hover,
+[data-slot="button"][data-variant="destructive"]:hover,
+[data-slot="button"][data-variant="secondary"]:hover,
+[data-slot="button"][data-variant="outline"]:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--brutal);
+}
+[data-slot="button"][data-variant="default"]:active,
+[data-slot="button"][data-variant="destructive"]:active,
+[data-slot="button"][data-variant="secondary"]:active,
+[data-slot="button"][data-variant="outline"]:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 0 transparent;
+}
+
+/* Tags / chips — sharp with an ink outline so they punch */
+.label {
+  letter-spacing: 0.01em;
+}
+
+/* Subtle engineering-paper grid on the main canvas */
+[data-slot="sidebar-inset"] {
+  background-color: var(--background);
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--foreground) 6%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--foreground) 6%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 28px 28px;
 }
