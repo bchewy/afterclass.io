@@ -5,7 +5,7 @@ import { X } from "lucide-react";
 import { cn } from "@/common/functions";
 
 const tagVariants = cva(
-  "inline-flex items-center select-none appearance-none rounded-md font-medium text-sm text-white transition-[background-color] data-[clickable=true]:cursor-pointer",
+  "inline-flex items-center select-none appearance-none rounded-none font-semibold text-sm text-white transition-[background-color] data-[clickable=true]:cursor-pointer",
   {
     compoundVariants: [
       // Default color

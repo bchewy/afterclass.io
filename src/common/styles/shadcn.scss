@@ -45,41 +45,56 @@
   --color-warning-foreground: var(--warning-foreground);
   --color-error: var(--error);
   --color-error-foreground: var(--error-foreground);
+
+  /* === Neo-brutalist hard offset shadows ===
+     These follow the active theme's --border color (black in light,
+     white in dark) so the signature "drop block" reads on both themes. */
+  --shadow-brutal-xs: 2px 2px 0 0 var(--border);
+  --shadow-brutal-sm: 3px 3px 0 0 var(--border);
+  --shadow-brutal: 4px 4px 0 0 var(--border);
+  --shadow-brutal-md: 6px 6px 0 0 var(--border);
+  --shadow-brutal-lg: 8px 8px 0 0 var(--border);
 }
 
 :root {
-  --radius: 0.75rem;
-  --background: oklch(0.958 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
-  --card: oklch(0.99 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
+  /* Brutalism: zero radius, everything is a sharp rectangle. */
+  --radius: 0rem;
+  /* Warm paper background, ink-black text and borders. */
+  --background: oklch(0.96 0.025 95);
+  --foreground: oklch(0.16 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.16 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.48 0.2229 280.55);
-  --primary-foreground: oklch(0.969 0.016 293.756);
-  --secondary: oklch(0.91 0.0368 292.45);
-  --secondary-foreground: oklch(0.48 0.2229 280.55);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.21 0.006 285.885);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.48 0.2229 280.55);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.48 0.2229 280.55);
-  --sidebar-primary-foreground: oklch(0.969 0.016 293.756);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.48 0.2229 280.55);
+  --popover-foreground: oklch(0.16 0 0);
+  /* Punchy electric violet as the loud primary. */
+  --primary: oklch(0.52 0.28 280);
+  --primary-foreground: oklch(0.99 0 0);
+  /* Acid yellow secondary with ink text. */
+  --secondary: oklch(0.88 0.2 100);
+  --secondary-foreground: oklch(0.16 0 0);
+  --muted: oklch(0.92 0.015 95);
+  --muted-foreground: oklch(0.43 0 0);
+  /* Hover/selected wash: soft violet tint. */
+  --accent: oklch(0.9 0.06 285);
+  --accent-foreground: oklch(0.18 0.02 285);
+  --destructive: oklch(0.58 0.245 27.325);
+  /* The signature: pure ink-black borders + shadows everywhere. */
+  --border: oklch(0 0 0);
+  --input: oklch(0 0 0);
+  --ring: oklch(0.52 0.28 280);
+  --chart-1: oklch(0.52 0.28 280);
+  --chart-2: oklch(0.78 0.2 100);
+  --chart-3: oklch(0.62 0.2 162.94);
+  --chart-4: oklch(0.65 0.24 16.439);
+  --chart-5: oklch(0.66 0.2266 259.26);
+  --sidebar: oklch(0.99 0.03 100);
+  --sidebar-foreground: oklch(0.16 0 0);
+  --sidebar-primary: oklch(0.52 0.28 280);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.9 0.06 285);
+  --sidebar-accent-foreground: oklch(0.18 0.02 285);
+  --sidebar-border: oklch(0 0 0);
+  --sidebar-ring: oklch(0.52 0.28 280);
 
   --info: oklch(0.6637 0.2266 259.26);
   --info-foreground: oklch(0.9148 0.0909 226.9);
@@ -92,37 +107,38 @@
 }
 
 .dark {
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.65 0.1718 272.63);
-  --primary-foreground: oklch(0.969 0.016 293.756);
-  --secondary: oklch(0.23 0.0881 283.57);
-  --secondary-foreground: oklch(0.67 0.1395 289.25);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground: oklch(0.985 0 0);
+  /* Dark brutalism: ink canvas, bright white borders + shadows. */
+  --background: oklch(0.15 0 0);
+  --foreground: oklch(0.97 0 0);
+  --card: oklch(0.21 0 0);
+  --card-foreground: oklch(0.97 0 0);
+  --popover: oklch(0.21 0 0);
+  --popover-foreground: oklch(0.97 0 0);
+  --primary: oklch(0.66 0.27 280);
+  --primary-foreground: oklch(0.13 0.02 280);
+  --secondary: oklch(0.85 0.2 100);
+  --secondary-foreground: oklch(0.16 0 0);
+  --muted: oklch(0.27 0 0);
+  --muted-foreground: oklch(0.72 0 0);
+  --accent: oklch(0.32 0.09 285);
+  --accent-foreground: oklch(0.97 0 0);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.65 0.1718 272.63);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.65 0.1718 272.63);
-  --sidebar-primary-foreground: oklch(0.969 0.016 293.756);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.65 0.1718 272.63);
+  --border: oklch(1 0 0);
+  --input: oklch(1 0 0);
+  --ring: oklch(0.66 0.27 280);
+  --chart-1: oklch(0.66 0.27 280);
+  --chart-2: oklch(0.85 0.2 100);
+  --chart-3: oklch(0.696 0.17 162.48);
+  --chart-4: oklch(0.645 0.246 16.439);
+  --chart-5: oklch(0.66 0.2266 259.26);
+  --sidebar: oklch(0.18 0 0);
+  --sidebar-foreground: oklch(0.97 0 0);
+  --sidebar-primary: oklch(0.66 0.27 280);
+  --sidebar-primary-foreground: oklch(0.13 0.02 280);
+  --sidebar-accent: oklch(0.32 0.09 285);
+  --sidebar-accent-foreground: oklch(0.97 0 0);
+  --sidebar-border: oklch(1 0 0);
+  --sidebar-ring: oklch(0.66 0.27 280);
 
   --info: oklch(0.6637 0.2266 259.26);
   --info-foreground: oklch(0.9148 0.0909 226.9);
@@ -140,5 +156,30 @@
   }
   body {
     @apply bg-background text-foreground;
+    /* A touch heavier overall — brutalism leans into weight. */
+    font-weight: 450;
+  }
+  /* Loud, condensed, uppercase-ish headings. */
+  h1,
+  h2,
+  h3 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  /* The brutalist "press": nudge toward the shadow and collapse it,
+     making cards/buttons feel like physical, stampable blocks. */
+  .brutal-press {
+    @apply transition-[transform,box-shadow] duration-100 ease-out;
+  }
+  .brutal-press:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-brutal-md);
+  }
+  .brutal-press:active {
+    transform: translate(1px, 1px);
+    box-shadow: var(--shadow-brutal-xs);
   }
 }
