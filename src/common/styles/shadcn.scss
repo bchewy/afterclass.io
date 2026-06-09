@@ -281,17 +281,17 @@ header[class*="sticky"] {
 [data-slot="button"][data-variant="outline"] {
   border: 2px solid var(--border);
   border-radius: 0;
-  box-shadow: var(--brutal-sm);
+  box-shadow: var(--brutal-xs);
   transition:
-    transform 0.08s ease,
-    box-shadow 0.08s ease;
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
 }
 [data-slot="button"][data-variant="default"]:hover,
 [data-slot="button"][data-variant="destructive"]:hover,
 [data-slot="button"][data-variant="secondary"]:hover,
 [data-slot="button"][data-variant="outline"]:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--brutal);
+  transform: translate(-4px, -4px);
+  box-shadow: var(--brutal-lg);
 }
 [data-slot="button"][data-variant="default"]:active,
 [data-slot="button"][data-variant="destructive"]:active,

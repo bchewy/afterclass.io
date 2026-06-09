@@ -47,6 +47,8 @@ export function ProgressLink({
 
   return (
     <Link
+      data-slot="button"
+      data-variant={variant ?? "default"}
       className={cn(buttonVariants({ variant, size, className }))}
       onClick={(e) => {
         e.preventDefault();
