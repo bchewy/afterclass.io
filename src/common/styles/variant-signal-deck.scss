@@ -1,0 +1,97 @@
+.signal-deck {
+  --sd-bg: #050508;
+  --sd-surface: #0c0c12;
+  --sd-ink: #f4f0ff;
+  --sd-muted: #8b86a8;
+  --sd-accent: #a855f7;
+  --sd-accent-hot: #f472b6;
+  --sd-cyan: #22d3ee;
+  --sd-grid: rgba(168, 85, 247, 0.12);
+  --sd-glow: rgba(168, 85, 247, 0.45);
+
+  color: var(--sd-ink);
+  background: var(--sd-bg);
+  font-family: var(--font-syne), system-ui, sans-serif;
+  min-height: 100dvh;
+
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% -10%, rgba(168, 85, 247, 0.28), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 90% 10%, rgba(244, 114, 182, 0.18), transparent 50%),
+      radial-gradient(ellipse 50% 30% at 50% 100%, rgba(34, 211, 238, 0.12), transparent 45%),
+      linear-gradient(180deg, #050508 0%, #08080f 100%);
+  }
+
+  &::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.35;
+    background-image:
+      linear-gradient(var(--sd-grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--sd-grid) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black, transparent);
+  }
+}
+
+.signal-deck-mono {
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+}
+
+@keyframes sd-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes sd-pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px var(--sd-glow), inset 0 0 20px rgba(168, 85, 247, 0.08);
+  }
+  50% {
+    box-shadow: 0 0 40px var(--sd-glow), inset 0 0 30px rgba(168, 85, 247, 0.15);
+  }
+}
+
+@keyframes sd-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.sd-animate-marquee {
+  animation: sd-marquee 28s linear infinite;
+}
+
+.sd-animate-glow {
+  animation: sd-pulse-glow 4s ease-in-out infinite;
+}
+
+.sd-animate-float {
+  animation: sd-float 6s ease-in-out infinite;
+}
+
+.sd-snap-x {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sd-snap-item {
+  scroll-snap-align: start;
+}
