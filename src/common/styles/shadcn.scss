@@ -20,6 +20,7 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -64,6 +65,7 @@
   --accent: oklch(0.94 0 0);
   --accent-foreground: oklch(0 0 0);
   --destructive: oklch(0 0 0);
+  --destructive-foreground: oklch(1 0 0);
   --border: oklch(0.84 0 0);
   --input: oklch(0.84 0 0);
   --ring: oklch(0 0 0);
@@ -107,6 +109,7 @@
   --accent: oklch(0.18 0 0);
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(1 0 0);
+  --destructive-foreground: oklch(0 0 0);
   --border: oklch(1 0 0 / 22%);
   --input: oklch(1 0 0 / 28%);
   --ring: oklch(1 0 0);
@@ -141,10 +144,10 @@
   body {
     @apply bg-background text-foreground;
   }
-  svg [fill]:not([fill="none"]) {
+  svg[role="presentation"] [fill]:not([fill="none"]) {
     fill: currentColor;
   }
-  svg [stroke]:not([stroke="none"]) {
+  svg[role="presentation"] [stroke]:not([stroke="none"]) {
     stroke: currentColor;
   }
 }
