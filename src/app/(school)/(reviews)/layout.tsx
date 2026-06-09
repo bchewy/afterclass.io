@@ -1,9 +1,10 @@
-import { type ReactNode } from "react";
+import { type ReactNode, Suspense } from "react";
 
 import { CtaButton } from "@/common/components/cta-button";
 import { EditIcon, GithubIcon, PlusIcon } from "@/common/components/icons";
 import { env } from "@/env";
 import { BidWindowScheduleCard } from "@/modules/bidding/components/BidWindowScheduleCard";
+import { ErrorBoundary } from "@/common/components/error-boundary";
 
 export default function ReviewLayout({
   header,
@@ -46,7 +47,11 @@ export default function ReviewLayout({
             data-test="cta-contribute-oss"
             data-umami-event="cta-btn-contribute-oss"
           />
-          <BidWindowScheduleCard />
+          <ErrorBoundary>
+            <Suspense fallback={null}>
+              <BidWindowScheduleCard />
+            </Suspense>
+          </ErrorBoundary>
         </div>
       </div>
     </div>

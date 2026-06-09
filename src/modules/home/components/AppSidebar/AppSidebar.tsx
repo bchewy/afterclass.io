@@ -23,7 +23,6 @@ import {
   TelegramIcon,
 } from "@/common/components/icons";
 import { env } from "@/env";
-import { toTitleCase } from "@/common/functions";
 import Link from "next/link";
 import { SearchCmdk } from "@/modules/search/components/SearchCmdk";
 import { usePathname } from "next/navigation";
@@ -194,7 +193,7 @@ export const AppSidebar = () => {
           !isMobile && items.every((item) => item.showMobileOnly) ? null : (
             <SidebarGroup key={key}>
               <SidebarGroupLabel className="font-mono-ui mb-1 px-3 text-[9px] uppercase tracking-[0.18em] text-[var(--neon-primary)]/50">
-                // {key}
+                {`// ${key}`}
               </SidebarGroupLabel>
               <SidebarGroupContent>
                 <SidebarMenu>

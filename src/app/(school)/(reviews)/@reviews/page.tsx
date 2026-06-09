@@ -8,6 +8,7 @@ import {
 import { ReviewItemLoader } from "@/modules/reviews/components/ReviewItemLoader";
 import { ReviewModalFocused } from "@/modules/reviews/components/ReviewModalFocused";
 import { CyberpunkHeroBanner } from "@/modules/home/components/CyberpunkHeroBanner";
+import { ReviewsWithErrorBoundary } from "@/modules/reviews/components/ReviewSection/ReviewsWithErrorBoundary";
 
 export default function Home() {
   return (
@@ -19,7 +20,9 @@ export default function Home() {
         </ReviewSectionHeader>
         <ReviewSectionListFilter />
         <ReviewSectionList>
-          <ReviewItemLoader variant="home" />
+          <ReviewsWithErrorBoundary>
+            <ReviewItemLoader variant="home" />
+          </ReviewsWithErrorBoundary>
         </ReviewSectionList>
       </ReviewSection>
       <ReviewModalFocused variant="home" />
