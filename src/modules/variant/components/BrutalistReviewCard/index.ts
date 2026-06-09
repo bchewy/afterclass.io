@@ -1,0 +1,1 @@
+export { BrutalistReviewCard } from "./BrutalistReviewCard";

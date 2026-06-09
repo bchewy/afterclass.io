@@ -1,0 +1,1 @@
+export { BrutalistHero } from "./BrutalistHero";

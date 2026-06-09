@@ -1,0 +1,1 @@
+export { BrutalistTicker } from "./BrutalistTicker";

@@ -1,0 +1,1 @@
+export { BrutalistBentoGrid } from "./BrutalistBentoGrid";

@@ -1,0 +1,1 @@
+export { BrutalistLayout } from "./BrutalistLayout";
