@@ -3,7 +3,7 @@ import "@/common/styles/globals.scss";
 import type { Metadata, Viewport } from "next";
 
 import { TRPCReactProvider } from "@/common/tools/trpc/react";
-import { CoreLayout } from "@/common/components/core-layout";
+import { ShellSwitcher } from "@/common/components/shell-switcher";
 import ThemeProvider from "@/common/providers/ThemeProvider";
 import AuthProvider from "@/common/providers/AuthProvider";
 import TooltipProvider from "@/common/providers/TooltipProvider";
@@ -79,7 +79,7 @@ export default function RootLayout({
                   <JotaiProvider>
                     <ThemeProvider>
                       <GlobalProgressBar />
-                      <CoreLayout>{children}</CoreLayout>
+                      <ShellSwitcher>{children}</ShellSwitcher>
                       <Toaster />
                       <UmamiIdentityTracker />
                     </ThemeProvider>
