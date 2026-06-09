@@ -1,7 +1,7 @@
 import {
   ChartLineIcon,
   CursorClickIcon,
-  SchoolIcon,
+  GraduationCapIcon,
 } from "@/common/components/icons";
 
 const cards = [
@@ -16,7 +16,7 @@ const cards = [
     title: "Read patterns across grades, workload, and teaching style.",
   },
   {
-    icon: <SchoolIcon className="size-5" />,
+    icon: <GraduationCapIcon className="size-5" />,
     label: "Contribute",
     title: "Leave the signal the next batch of students needs.",
   },
