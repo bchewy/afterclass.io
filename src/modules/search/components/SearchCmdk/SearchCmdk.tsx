@@ -120,7 +120,7 @@ export const SearchCmdk = ({
       </ModalTrigger>
       <ModalContent
         data-test="search-cmdk-modal"
-        className="mt-[10%] flex-row items-center gap-2 overflow-hidden border-none px-4 py-0 sm:py-0"
+        className="mt-[10%] flex-row items-center gap-2 overflow-hidden px-4 py-0 sm:py-0"
       >
         <VisuallyHidden asChild>
           <ModalTitle>Search for Professors or Courses</ModalTitle>

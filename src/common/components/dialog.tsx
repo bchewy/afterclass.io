@@ -38,7 +38,7 @@ function DialogOverlay({
     <DialogPrimitive.Overlay
       data-slot="dialog-overlay"
       className={cn(
-        "bg-background/50 fixed inset-0 z-50 flex justify-center overflow-y-auto p-4 backdrop-blur-sm data-[state=closed]:animate-[dialog-overlay-hide_200ms] data-[state=open]:animate-[dialog-overlay-show_200ms] sm:p-10",
+        "bg-foreground/25 fixed inset-0 z-50 flex justify-center overflow-y-auto p-4 data-[state=closed]:animate-[dialog-overlay-hide_200ms] data-[state=open]:animate-[dialog-overlay-show_200ms] sm:p-10",
         className,
       )}
       {...props}
@@ -57,7 +57,7 @@ function DialogContent({
         <DialogPrimitive.Content
           data-slot="dialog-content"
           className={cn(
-            "bg-card text-card-foreground relative m-auto flex max-h-full w-full max-w-prose flex-col overflow-hidden rounded-lg border p-6 py-5 shadow-lg sm:py-8",
+            "bg-card text-card-foreground relative m-auto flex max-h-full w-full max-w-prose flex-col overflow-hidden rounded-none border-2 border-border p-6 py-5 shadow-brutal-lg sm:py-8",
             "gap-4 md:mx-10 md:my-auto md:h-auto",
             className,
           )}
