@@ -7,6 +7,7 @@ import {
 } from "@/modules/reviews/components/ReviewSection";
 import { ReviewItemLoader } from "@/modules/reviews/components/ReviewItemLoader";
 import { ReviewModalFocused } from "@/modules/reviews/components/ReviewModalFocused";
+import { HomeReviewFeedBoundary } from "./HomeReviewFeedBoundary";
 
 export default function Home() {
   return (
@@ -26,7 +27,9 @@ export default function Home() {
         </ReviewSectionHeader>
         <ReviewSectionListFilter />
         <ReviewSectionList>
-          <ReviewItemLoader variant="home" />
+          <HomeReviewFeedBoundary>
+            <ReviewItemLoader variant="home" />
+          </HomeReviewFeedBoundary>
         </ReviewSectionList>
       </ReviewSection>
       <ReviewModalFocused variant="home" />
