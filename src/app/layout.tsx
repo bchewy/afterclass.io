@@ -7,7 +7,7 @@ import { CoreLayout } from "@/common/components/core-layout";
 import ThemeProvider from "@/common/providers/ThemeProvider";
 import AuthProvider from "@/common/providers/AuthProvider";
 import TooltipProvider from "@/common/providers/TooltipProvider";
-import { inter, poppins } from "@/common/fonts";
+import { inter } from "@/common/fonts";
 import { env } from "@/env";
 import { EdgeConfigProvider } from "@/common/providers/EdgeConfig";
 import { UmamiProvider } from "@/common/providers/Umami";
@@ -27,8 +27,8 @@ const appDesc = [
 export const viewport: Viewport = {
   themeColor: [
     // see `src\common\tools\tailwind\themes`
-    { media: "(prefers-color-scheme: light)", color: "#F1F1F3" },
-    { media: "(prefers-color-scheme: dark)", color: "#131316" },
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
   ],
   width: "device-width",
   initialScale: 1.0,
@@ -60,7 +60,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${poppins.variable}`}
+      className={inter.variable}
       suppressHydrationWarning
     >
       <head>

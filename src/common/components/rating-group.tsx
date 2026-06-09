@@ -6,7 +6,7 @@ import { HeartUnfilledIcon } from "@/common/components/icons";
 
 const DEFAULT_MAX_RATING = 5;
 const DEFAULT_ICON_SIZE = 24;
-const DEFAULT_ICON_COLOR = "#C1694F";
+const DEFAULT_ICON_COLOR = "currentColor";
 
 const HeartIcon = React.memo(
   ({

@@ -1,6 +1,6 @@
 import {
   ClockIcon,
-  GraduationCapColoredIcon,
+  GraduationCapIcon,
   MemoIcon,
   PinIcon,
 } from "@/common/components/icons";
@@ -42,7 +42,7 @@ export const ClassCard = ({
   return (
     <ProgressLink
       variant="outline"
-      className="hover:bg-secondary focus-ring bg-card flex h-fit w-64 cursor-pointer flex-col items-start gap-2 rounded-md border p-4 text-left font-normal md:gap-4"
+      className="hover:bg-accent focus-ring flex h-fit w-64 cursor-pointer flex-col items-start gap-2 border border-border p-4 text-left font-normal md:gap-4"
       href={`/bidding/analytics?course=${course.code}&section=${section}&classId=${classId}`}
       data-umami-event="boss-bid-class-select"
       data-umami-event-class-id={classId}
@@ -62,7 +62,7 @@ export const ClassCard = ({
         </Heading>
 
         <div className="flex items-center gap-2">
-          <GraduationCapColoredIcon size={24} />
+          <GraduationCapIcon size={24} />
           <span className="w-full truncate tracking-tight">
             {professor?.name ?? "TBA"}
           </span>

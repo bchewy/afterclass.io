@@ -14,7 +14,7 @@ export const FilterToggleSection = ({
 }: FilterToggleSectionProps) => {
   return (
     <div
-      className="bg-card relative flex w-full flex-col items-start gap-3 rounded-2xl px-3 py-4 select-none md:gap-5 md:p-6"
+      className="relative flex w-full flex-col items-start gap-3 border-b border-border px-3 py-4 select-none md:gap-5 md:p-6"
       {...props}
       data-slot="filter-toggle-section"
       data-test="filter-toggle-section"

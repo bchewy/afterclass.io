@@ -160,7 +160,7 @@ export const AppSidebar = () => {
                       {item.isNew && (
                         <Tag
                           variant="outline"
-                          color="success"
+                          color="default"
                           size="xs"
                           deletable={false}
                         >
@@ -206,7 +206,7 @@ export const AppSidebar = () => {
                             {item.isNew && (
                               <Tag
                                 variant="outline"
-                                color="success"
+                                color="default"
                                 size="xs"
                                 deletable={false}
                               >

@@ -41,7 +41,7 @@ export const ReviewFormSection = ({
 
   return (
     <div
-      className="bg-card flex w-full flex-col items-start gap-6 rounded-2xl px-4 py-6 sm:px-6 sm:py-8 md:w-160"
+      className="flex w-full flex-col items-start gap-6 border-b border-border px-4 py-6 sm:px-6 sm:py-8 md:w-160"
       data-test={`review-form-${type}-section`}
     >
       <div className="flex flex-col items-start justify-between gap-6 self-stretch sm:flex-row">

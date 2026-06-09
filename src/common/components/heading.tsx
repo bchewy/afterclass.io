@@ -22,7 +22,7 @@ export const Heading = ({
     <Component
       {...props}
       className={cn(
-        "text-accent-foreground font-sans font-semibold tracking-tighter",
+        "text-foreground font-sans font-medium tracking-normal",
         className,
       )}
     >
