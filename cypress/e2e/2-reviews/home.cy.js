@@ -5,6 +5,16 @@ context("Reviews: Home", function () {
     cy.visit("/");
   });
 
+  describe("Homepage Variant", function () {
+    it("should introduce the campus signal room", function () {
+      cy.contains("h1", "The campus signal room").should("be.visible");
+      cy.get("a[data-test=home-radar-submit]")
+        .should("be.visible")
+        .and("have.attr", "href", "/submit");
+      cy.get("[data-test=review]").should("have.length.at.least", 1);
+    });
+  });
+
   describe("Basic Navigations", function () {
     it("should be able to navigate to login page and login", function () {
       cy.intercept("GET", "/account/auth/login*").as("navigateToLoginPage");

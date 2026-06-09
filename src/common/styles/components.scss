@@ -2,6 +2,71 @@
   .focus-ring {
     @apply focus-visible:border-primary focus-visible:ring-primary/20 focus-visible:ring-2;
   }
+
+  .home-signal-room {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.07),
+        transparent 26%
+      ),
+      radial-gradient(
+        circle at 84% 18%,
+        rgba(245, 255, 97, 0.2),
+        transparent 30%
+      ),
+      radial-gradient(
+        circle at 12% 90%,
+        rgba(107, 53, 255, 0.32),
+        transparent 34%
+      ),
+      #08070c;
+  }
+
+  .home-signal-grid {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.055) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: linear-gradient(to bottom, black, transparent 82%);
+    opacity: 0.7;
+  }
+
+  .home-signal-scan {
+    position: absolute;
+    inset: -45% -20%;
+    background: linear-gradient(
+      115deg,
+      transparent 35%,
+      rgba(245, 255, 97, 0.18) 48%,
+      transparent 60%
+    );
+    animation: home-signal-scan 7s linear infinite;
+  }
+
+  .home-signal-orbit {
+    animation: home-signal-orbit 18s linear infinite;
+  }
+
+  .home-signal-node {
+    @apply absolute z-10 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-2 text-xs font-bold tracking-[0.14em] text-white/75 uppercase backdrop-blur;
+  }
+
+  .home-signal-ticker {
+    animation: home-signal-ticker 24s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .home-signal-scan,
+    .home-signal-orbit,
+    .home-signal-ticker {
+      animation: none;
+    }
+  }
+
   .break-anywhere {
     /*
     tailwind's `break-words` class doesn't work as expected in some cases
@@ -10,5 +75,26 @@
     Playground for our usecase https://play.tailwindcss.com/x9h990fI5Y?layout=horizontal
     */
     overflow-wrap: anywhere;
+  }
+}
+
+@keyframes home-signal-scan {
+  from {
+    transform: translateX(-42%);
+  }
+  to {
+    transform: translateX(42%);
+  }
+}
+
+@keyframes home-signal-orbit {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes home-signal-ticker {
+  to {
+    transform: translateX(-50%);
   }
 }
