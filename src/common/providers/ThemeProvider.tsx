@@ -9,7 +9,7 @@ export default function ThemeProvider({
   return (
     <NextThemeProvider
       attribute="class"
-      defaultTheme="system"
+      defaultTheme="dark"
       themes={["light", "dark"]}
       disableTransitionOnChange
     >
