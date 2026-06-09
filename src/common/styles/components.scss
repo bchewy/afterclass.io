@@ -11,4 +11,18 @@
     */
     overflow-wrap: anywhere;
   }
+
+  .home-signal-marquee {
+    animation: home-signal-marquee 24s linear infinite;
+  }
+}
+
+@keyframes home-signal-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }

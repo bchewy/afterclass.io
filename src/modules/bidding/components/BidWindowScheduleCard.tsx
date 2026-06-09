@@ -122,7 +122,36 @@ export const BidWindowScheduleCard = async () => {
   await connection();
   const now = new TZDate(Date.now(), "Asia/Singapore");
 
-  const acadTermId = (await api.acadTerms.getLatest())!.id;
+  const latestAcadTerm = await api.acadTerms.getLatest().catch(() => null);
+
+  if (!latestAcadTerm) {
+    return (
+      <Card className="w-full max-w-[321px]">
+        <CardHeader className="gap-2">
+          <CardTitle>BOSS bidding schedule</CardTitle>
+        </CardHeader>
+        <CardContent className="text-muted-foreground text-wrap">
+          Schedule data is unavailable right now.
+        </CardContent>
+        <CardFooter className="text-muted-foreground text-wrap">
+          <div>
+            Struggling with bid amounts? Try out our
+            <ProgressLink
+              href="/bidding"
+              variant="link"
+              className="inline px-1 py-0"
+              data-umami-event="boss-bid-recommendation"
+            >
+              bid recommendations
+            </ProgressLink>
+            and secure your modules!
+          </div>
+        </CardFooter>
+      </Card>
+    );
+  }
+
+  const acadTermId = latestAcadTerm.id;
   const { term, displayYear } = inferAcadTerm(acadTermId);
 
   return (
