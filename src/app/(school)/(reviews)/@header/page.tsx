@@ -48,8 +48,11 @@ export default async function HomeHeader() {
             </p>
             <h1 className="font-[family-name:var(--font-poppins)] leading-[0.78] font-black tracking-[-0.07em] uppercase">
               <span className="block text-[clamp(3rem,8vw,6.5rem)]">Pick</span>
-              <span className="block text-[clamp(3.35rem,10vw,9rem)]">
-                classes like contraband.
+              <span className="block text-[clamp(3rem,8vw,6.75rem)]">
+                classes like
+              </span>
+              <span className="block text-[clamp(3rem,8vw,6.75rem)]">
+                contraband.
               </span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-7 text-white/74 md:text-xl">
