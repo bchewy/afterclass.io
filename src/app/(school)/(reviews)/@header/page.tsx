@@ -11,7 +11,7 @@ const signals = [
 
 export default async function HomeHeader() {
   return (
-    <section className="relative isolate w-full overflow-hidden rounded-[2rem] border border-lime-300/25 bg-[#080906] px-5 py-6 text-white shadow-2xl shadow-black/30 md:rounded-[3rem] md:px-10 md:py-10">
+    <section className="relative isolate w-full overflow-hidden rounded-[2rem] border border-lime-300/25 bg-[#080906] px-5 pt-18 pb-6 text-white shadow-2xl shadow-black/30 md:rounded-[3rem] md:px-10 md:pt-20 md:pb-10">
       <div
         className="absolute inset-0 -z-20 opacity-70"
         aria-hidden="true"
