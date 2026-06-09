@@ -10,6 +10,8 @@ import {
   ReviewsFilterFor,
   ReviewsSortBy,
 } from "@/modules/reviews/types";
+import { isMockDataEnabled } from "@/server/mock/enable";
+import { mockReviewsList } from "@/server/mock/handlers";
 
 export const getAllProtected = protectedProcedure
   .input(
@@ -25,6 +27,10 @@ export const getAllProtected = protectedProcedure
     }),
   )
   .query(async ({ ctx, input }) => {
+    if (isMockDataEnabled()) {
+      return mockReviewsList(input);
+    }
+
     const reviews = await ctx.db.reviews.findMany({
       skip: input.skip,
       take: input.limit + 1,

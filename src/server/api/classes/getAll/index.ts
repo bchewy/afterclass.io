@@ -2,6 +2,8 @@ import { z } from "zod";
 
 import { publicProcedure } from "@/server/api/trpc";
 import { PUBLIC_CLASS_FIELDS } from "@/server/api/classes/constants";
+import { isMockDataEnabled } from "@/server/mock/enable";
+import { mockClassesList } from "@/server/mock/handlers";
 
 export const getAll = publicProcedure
   .input(
@@ -17,6 +19,10 @@ export const getAll = publicProcedure
     }),
   )
   .query(async ({ ctx, input }) => {
+    if (isMockDataEnabled()) {
+      return mockClassesList(input);
+    }
+
     const latestAcadTerm = await ctx.db.acadTerm.findFirst({
       orderBy: {
         startDt: "desc",

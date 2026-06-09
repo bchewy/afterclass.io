@@ -11,6 +11,7 @@ import { ReviewFooter } from "./ReviewFooter";
 import { ReviewModal } from "./ReviewModal";
 import { ReviewItemViewEventTracker } from "../ReviewItemViewEventTracker";
 import { FullWidthEnforcer } from "@/common/components/full-width-enforcer";
+import { isPublicMockDataEnabled } from "@/common/mock/enable";
 
 export type ReviewItemProps = {
   review: Review;
@@ -39,7 +40,11 @@ export const ReviewItem = ({
     [review, variant],
   );
 
-  return !(session.status === "authenticated") || isLocked ? (
+  const showLocked =
+    !isPublicMockDataEnabled() &&
+    (!(session.status === "authenticated") || isLocked);
+
+  return showLocked ? (
     <div
       className="focus-ring flex h-fit max-w-prose cursor-pointer flex-col items-start gap-2 rounded-md p-4 text-left md:gap-4"
       data-test="review"

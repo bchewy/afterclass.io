@@ -36,6 +36,10 @@ export const env = createEnv({
     ),
     GOOGLE_CLIENT_ID: z.string(),
     GOOGLE_CLIENT_SECRET: z.string(),
+    USE_MOCK_DATA: z
+      .enum(["true", "false"])
+      .default("false")
+      .transform((value) => value === "true"),
   },
 
   /**
@@ -82,6 +86,10 @@ export const env = createEnv({
     NEXT_PUBLIC_AC_CHANNEL_LINK: z.string().url(),
     NEXT_PUBLIC_AC_HELPDESK_LINK: z.string().url(),
     NEXT_PUBLIC_AC_GITHUB_LINK: z.string().url(),
+    NEXT_PUBLIC_USE_MOCK_DATA: z
+      .enum(["true", "false"])
+      .default("false")
+      .transform((value) => value === "true"),
   },
 
   /**
@@ -95,6 +103,7 @@ export const env = createEnv({
     NEXTAUTH_URL: process.env.NEXTAUTH_URL ?? process.env.VERCEL_URL,
     GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
+    USE_MOCK_DATA: process.env.USE_MOCK_DATA,
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
     NEXT_PUBLIC_OLD_SITE_URL: process.env.NEXT_PUBLIC_OLD_SITE_URL,
     NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -104,6 +113,7 @@ export const env = createEnv({
     NEXT_PUBLIC_AC_CHANNEL_LINK: process.env.NEXT_PUBLIC_AC_CHANNEL_LINK,
     NEXT_PUBLIC_AC_HELPDESK_LINK: process.env.NEXT_PUBLIC_AC_HELPDESK_LINK,
     NEXT_PUBLIC_AC_GITHUB_LINK: process.env.NEXT_PUBLIC_AC_GITHUB_LINK,
+    NEXT_PUBLIC_USE_MOCK_DATA: process.env.NEXT_PUBLIC_USE_MOCK_DATA,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.

@@ -3,6 +3,8 @@ import { db } from "@/server/db";
 import { api } from "@/common/tools/trpc/server";
 import { auth } from "@/server/auth";
 import { processSearchQuery } from "./processSearchQuery";
+import { isMockDataEnabled } from "@/server/mock/enable";
+import { mockSearchCourses } from "@/server/mock/handlers";
 
 type QueryCourseResult = {
   uniAbbrv: Universities["abbrv"];
@@ -21,6 +23,10 @@ export async function searchCourse(
   query: string,
   limit = 5,
 ): Promise<SearchCourseResult[]> {
+  if (isMockDataEnabled()) {
+    return mockSearchCourses(query).slice(0, limit);
+  }
+
   // safety of query is ensured by the Prisma client using prepared statements
   // https://github.com/prisma/prisma-client-js/issues/727#issuecomment-650096790
   const processedQuery = processSearchQuery(query);

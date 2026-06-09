@@ -2,6 +2,8 @@ import { z } from "zod";
 import { type Prisma, UniversityAbbreviation } from "@prisma/client";
 
 import { publicProcedure } from "@/server/api/trpc";
+import { isMockDataEnabled } from "@/server/mock/enable";
+import { mockCourses } from "@/server/mock/handlers";
 
 export const getAllByUniAbbrv = publicProcedure
   .input(
@@ -10,6 +12,10 @@ export const getAllByUniAbbrv = publicProcedure
     }),
   )
   .query(async ({ ctx, input }) => {
+    if (isMockDataEnabled()) {
+      return mockCourses;
+    }
+
     const courses = await ctx.db.courses.findMany({
       select: {
         id: true,
