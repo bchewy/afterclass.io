@@ -60,6 +60,20 @@ const NoReviewCtaNote = () => (
   </>
 );
 
+const ReviewLoadErrorNote = () => (
+  <>
+    <FullWidthEnforcer />
+    <div className="w-full px-3 py-10 text-center md:py-12">
+      <p className="text-accent-foreground font-semibold">
+        Reviews are unavailable right now.
+      </p>
+      <p className="text-muted-foreground mt-1 md:text-sm">
+        The campus signal wall is still here. Try refreshing the feed shortly.
+      </p>
+    </div>
+  </>
+);
+
 export const ReviewItemLoader = (props: ReviewItemLoaderProps) => {
   const { data: session, status } = useSession();
   const searchParams = useSearchParams();
@@ -84,7 +98,7 @@ export const ReviewItemLoader = (props: ReviewItemLoaderProps) => {
         const apiFn = session
           ? api.reviews.getByCourseCodeProtected
           : api.reviews.getByCourseCode;
-        return apiFn.useSuspenseInfiniteQuery(
+        return apiFn.useInfiniteQuery(
           { code, slugs, filterFor, sortBy },
           {
             getNextPageParam: (lastPage) => lastPage.nextCursor,
@@ -96,7 +110,7 @@ export const ReviewItemLoader = (props: ReviewItemLoaderProps) => {
         const apiFn = session
           ? api.reviews.getByProfSlugProtected
           : api.reviews.getByProfSlug;
-        return apiFn.useSuspenseInfiniteQuery(
+        return apiFn.useInfiniteQuery(
           { slug, courseCodes, filterFor, sortBy },
           {
             getNextPageParam: (lastPage) => lastPage.nextCursor,
@@ -107,7 +121,7 @@ export const ReviewItemLoader = (props: ReviewItemLoaderProps) => {
         const apiFn = session
           ? api.reviews.getAllProtected
           : api.reviews.getAll;
-        return apiFn.useSuspenseInfiniteQuery(
+        return apiFn.useInfiniteQuery(
           { filterFor, sortBy },
           {
             getNextPageParam: (lastPage) => lastPage.nextCursor,
@@ -117,17 +131,19 @@ export const ReviewItemLoader = (props: ReviewItemLoaderProps) => {
     }
   };
 
-  const [{ pages }, reviewQuery] = getInfiniteQuery();
-  const { fetchNextPage, hasNextPage, isPending, isRefetching } = reviewQuery;
+  const reviewQuery = getInfiniteQuery();
+  const { fetchNextPage, hasNextPage, isError, isPending, isRefetching, data } =
+    reviewQuery;
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     reviewQuery.refetch();
   }, [searchParams]);
 
+  const pages = data?.pages ?? [];
   const reviews = pages.flatMap((page) => page.items);
 
-  if (reviews.length === 0) {
-    return <NoReviewCtaNote />;
+  if (isError) {
+    return <ReviewLoadErrorNote />;
   }
 
   if (status === "loading" || isPending || isRefetching) {
@@ -135,7 +151,7 @@ export const ReviewItemLoader = (props: ReviewItemLoaderProps) => {
       <>
         <Separator />
 
-        {reviews
+        {(reviews.length > 0 ? reviews : Array.from({ length: 3 }))
           .flatMap((_, index) => [
             <ReviewItemSkeleton key={index} />,
             <Separator key={`hr-${index}`} />,
@@ -143,6 +159,10 @@ export const ReviewItemLoader = (props: ReviewItemLoaderProps) => {
           .slice(0, -1)}
       </>
     );
+  }
+
+  if (reviews.length === 0) {
+    return <NoReviewCtaNote />;
   }
 
   return (
