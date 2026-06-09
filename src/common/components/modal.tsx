@@ -98,7 +98,7 @@ const ModalContent = ({
 
   return (
     <Portal>
-      <Overlay className="bg-foreground/25 fixed inset-0 z-50 flex justify-center overflow-y-auto p-4 data-[state=closed]:animate-[dialog-overlay-hide_200ms] data-[state=open]:animate-[dialog-overlay-show_200ms] sm:p-10">
+      <Overlay className="bg-foreground/50 fixed inset-0 z-50 flex justify-center overflow-y-auto p-4 data-[state=closed]:animate-[dialog-overlay-hide_200ms] data-[state=open]:animate-[dialog-overlay-show_200ms] sm:p-10">
         <Content
           className={cn(
             "border-border bg-card text-card-foreground relative m-auto flex h-fit w-full max-w-[720px] flex-col overflow-hidden rounded-none border-2 py-5 shadow-brutal-lg sm:py-8",
