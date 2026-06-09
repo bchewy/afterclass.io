@@ -66,7 +66,7 @@ export default async function BiddingHistoryPage({
             />
           ))
         ) : (
-          <div className="col-span-2 text-center text-gray-500">
+          <div className="text-muted-foreground col-span-2 text-center">
             No classes found for the selected filters.
           </div>
         )}

@@ -25,7 +25,7 @@ export default function RootError({
         <h1 className="text-accent-foreground mt-4 text-5xl font-semibold tracking-tight text-balance sm:text-7xl">
           Opps!
         </h1>
-        <p className="mt-6 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
+        <p className="text-muted-foreground mt-6 text-lg font-medium text-pretty sm:text-xl/8">
           Sorry, an unexpected error has occurred.
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
