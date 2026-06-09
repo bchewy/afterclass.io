@@ -35,7 +35,7 @@ export const CtaButton = ({
   return (
     <ProgressLink
       className={cn(
-        "h-fit w-full items-center justify-between self-stretch border p-6 has-[>svg]:px-6",
+        "h-fit w-full items-center justify-between self-stretch rounded-none border-2 border-foreground p-6 shadow-[var(--nb-shadow)] transition-all hover:-translate-x-[1px] hover:-translate-y-[1px] hover:shadow-[var(--nb-shadow-lg)] has-[>svg]:px-6",
         className,
       )}
       {...props}

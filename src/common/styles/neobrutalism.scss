@@ -1,0 +1,67 @@
+/**
+ * AfterClass NEO — neo-brutalist surface treatment.
+ *
+ * These rules are intentionally left *unlayered* so they reliably win over
+ * Tailwind's utility/components cascade layers for the few structural surfaces
+ * that need a chunkier, more deliberate treatment than the global token
+ * overrides (ink borders, sharp corners, hard offset shadows) already provide.
+ */
+
+/* Display headings: bold, tight, grotesk. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:
+    var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Crisp, heavy divider between the sidebar rail and the canvas. */
+[data-slot="sidebar-container"][data-side="left"],
+[data-slot="sidebar-container"].group-data-\[side\=left\]\:border-r {
+  border-right: 2px solid var(--sidebar-border);
+}
+
+/* Heavy underline beneath the top app bar. */
+.nb-app-header {
+  border-bottom-width: 2px;
+}
+
+/* Active nav item reads like a pressed physical key. */
+[data-slot="sidebar-menu-button"][data-active="true"] {
+  border: 2px solid var(--foreground) !important;
+  background-color: var(--sidebar-primary);
+  color: var(--sidebar-primary-foreground);
+  box-shadow: var(--nb-shadow-sm);
+}
+
+/* Floating surfaces (menus, dialogs, popovers, search) get chunky frames. */
+[data-slot="popover-content"],
+[data-slot="dropdown-menu-content"],
+[data-slot="dialog-content"],
+[data-slot="alert-dialog-content"],
+[data-slot="command"],
+[data-slot="command-dialog"],
+[data-slot="select-content"],
+[data-slot="hover-card-content"],
+[data-slot="tooltip-content"] {
+  border-width: 2px;
+  border-color: var(--border);
+}
+
+/* Pill-style tags/badges become hard-edged chips with an ink outline. */
+[data-slot="tag"],
+[data-slot="badge"] {
+  border-radius: 0;
+}
+
+/* Inputs: ink frame + hard shadow, with a tactile focus shift. */
+[data-slot="sidebar-input"],
+.nb-input {
+  border-width: 2px;
+  box-shadow: var(--nb-shadow-sm);
+}
