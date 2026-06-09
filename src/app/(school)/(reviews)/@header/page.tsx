@@ -102,7 +102,7 @@ export default async function HomeHeader() {
               anonymous note
             </p>
             <p className="mt-2 text-2xl leading-none font-black tracking-[-0.06em]">
-              "The best modules are hidden in the comments."
+              The best modules are hidden in the comments.
             </p>
           </div>
         </div>
